@@ -1,0 +1,513 @@
+@font-face {  
+    font-family: "CormorantSC-Bold";  
+    src: url("../fonts/CormorantSC-Bold.ttf") format("truetype");  
+    font-style: normal;  
+    font-weight: normal;  
+}  
+
+@font-face {  
+    font-family: "Roboto-Light";  
+    src: url("../fonts/Roboto-Light.ttf") format("truetype");  
+    font-style: normal;  
+    font-weight: normal;  
+}  
+
+@font-face {  
+    font-family: "PT-Serif-Caption-Italic";  
+    src: url("../fonts/PT-Serif-Caption-Italic.ttf") format("truetype");  
+    font-style: normal;  
+    font-weight: normal;  
+}  
+
+@font-face {  
+    font-family: "PT-Serif-Caption-Regular";  
+    src: url("../fonts/PT-Serif-Caption-Regular.ttf") format("truetype");  
+    font-style: normal;  
+    font-weight: normal;  
+}  
+
+html,  
+body {  
+    height: 100%;  
+    font-family: CormorantSC-Bold, CormorantSC-Light, Roboto-Light, PT-Serif-Caption-Italic, PT-Serif-Caption-Regular;  
+    background-color: #e0d8c7;  
+    margin: 0;  
+    display: flex;  
+    flex-direction: column;  
+}  
+
+main {  
+    flex-grow: 2; /* Позволяет основному контенту занимать все доступное пространство */  
+}  
+
+header {  
+    background-color: #444B3D; /* Темно-зеленый цвет */  
+    color: white;  
+    padding: 1.5%; /* Уменьшение отступов */  
+}  
+
+.ind {  
+    display: flex;  
+    height: 100%;  
+}  
+
+footer {  
+    font-family: Roboto-Light;  
+    background-color: #444B3D; /* Темно-зеленый цвет */  
+    color: #FFEBA9;  
+    text-align: center;  
+    max-height: 80px; /* Уменьшение максимальной высоты */  
+    font-size: 0.9rem; /* Уменьшение размера шрифта */  
+
+    img {  
+        display: flex;  
+        margin-left: 1%; /* Уменьшение отступа */  
+        width: 5%; /* Уменьшение размера изображения */  
+        align-items: center;  
+    }  
+
+    .contact-info {  
+        text-align: left;  
+        padding: 1%; /* Уменьшение отступов */  
+    }  
+
+    .c {  
+        color: #FFEBA9;  
+        position: absolute;  
+        width: 100%;  
+        padding-top: 40px; /* Уменьшение отступа сверху */  
+    }  
+}  
+
+#fon {  
+    width: calc(50% - 1.5%); /* Уменьшение до 1.5% для улучшения адаптивности */  
+    margin-right: 2.5%; /* Уменьшение отступа */ 
+    height: auto; /* Ensure height adjusts based on content */  
+}  
+
+.intro {  
+    font-family: Roboto-Light;  
+    font-size: 1.5vw; /* Уменьшение размера шрифта */  
+    color: #621007;  
+    padding: 1.5%; /* Уменьшение отступов */  
+    background-color: #fdf5e6; /* Светлый бежевый фон */  
+    border: 1px solid #d3cfc9;  
+    margin-left: 2.5%; /* Уменьшение отступа */  
+    box-sizing: border-box; /* Включает padding и border в ширину */  
+    height: auto; /* Адаптация высоты под содержимое */  
+    width: calc(50% - 1.5%); /* Уменьшение до 1.5% для улучшения адаптивности */  
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Уменьшение тени */  
+}  
+
+#logo1 {  
+    padding-right: 1%; /* Уменьшение отступа */  
+    display: flex; /* Гибкий контейнер для логотипа */  
+    width: calc(11.4% - 0.5%); /* Уменьшение до 1.5% для улучшения адаптивности */  
+}  
+
+.book-button {  
+    display: flex;  
+    align-items: center; /* Вертикальное выравнивание элементов в кнопках */  
+    margin-left:10%;  
+    white-space: nowrap;  
+
+    a {  
+        font-family: PT-Serif-Caption-Regular;  
+        font-size: 1.5vw; /* Уменьшение размера текста */  
+        background-color: #444B3D; /* Цвет фона */  
+        border: 0.5px solid #FFEBA9; /* Граница */  
+        color: #FFEBA9; /* Цвет текста */  
+        padding: 8px 30px; /* Уменьшение полей */  
+        text-align: center; /* Выравнивание текста по центру */  
+        display: flex;  
+        text-decoration: none;  
+        margin-right: 2%; /* Уменьшение отступа между кнопками */  
+        outline: none; /* Убираем обводку при фокусе */  
+        max-width: 100%;
+    }  
+
+    a:hover {  
+        background-color: #FFEBA9;  
+        color: #444B3D;  
+    }  
+}  
+
+#logo2 {  
+    width: 45%; /* Уменьшение ширины для лучшего выравнивания */  
+    display: flex;  
+}  
+
+/* Медиа-запросы для адаптации к меньшим экранам */  
+@media (max-width: 768px) {  
+    footer {  
+        font-size: 0.8rem; /* Уменьшение размера шрифта в футере */  
+    }  
+
+    .intro {  
+        font-size: 3vw; /* Уменьшение размера шрифта на меньших экранах */  
+    }  
+
+    .book-button a {  
+        font-size: 2vw; /* Уменьшение размера текста на кнопке */  
+        padding: 2% 5%; /* Пропорциональные отступы на меньших экранах */  
+    }  
+    h2 {  
+        font-size: 1.5rem; /* Уменьшение размера шрифта заголовка на мобильных */  
+    }  
+
+    #confirm-reservation {  
+        font-size: 1rem; /* Уменьшение размера шрифта кнопки на мобильных */  
+        padding: 0.5rem 2rem; /* Уменьшение полей кнопки */  
+    }  
+
+    #reservation-form {  
+        max-width: 90%; /* Увеличение ширины формы для мобильных */  
+    }  
+
+    input[type="text"],  
+    input[type="tel"],  
+    input[type="date"],  
+    input[type="time"],  
+    input[type="number"] {  
+        font-size: 0.875rem; /* Уменьшение размера шрифта полей ввода на мобильных */  
+    } 
+
+}
+
+/* Бронь */  
+/* Form Section Styles */  
+h2 {  
+    font-family: CormorantSC-Bold;  
+    font-size: 2rem; /* Используем rem для адаптивности */  
+    color: #444B3D;  
+    text-align: center;  
+    padding-top: 1rem; /* Используем rem для адаптивности */  
+}  
+
+#confirm-reservation {  
+    font-family: PT-Serif-Caption-Regular;  
+    font-size: 1.125rem; /* Используем rem для адаптивности */  
+    background-color: #444B3D; /* Цвет фона */  
+    border: 0.5px solid #FFEBA9; /* Граница */  
+    color: #FFEBA9; /* Цвет текста */  
+    padding: 0.5rem 4rem; /* Используем rem для адаптивности */  
+    text-align: center; /* Выравнивание текста по центру */  
+    display: flex;  
+    text-decoration: none;  
+    outline: none; /* Убираем обводку при фокусе */  
+    margin: 1.5rem auto; /* Используем rem для адаптивности */  
+    border-radius: 0.3125rem; /* Используем rem для адаптивности */  
+    transition: background-color 0.3s, transform 0.3s; /* Плавный переход */  
+
+    &:hover {  
+        transform: scale(1.05); /* Увеличение размера кнопки при наведении */  
+    }  
+}  
+
+#reservation-form {  
+    margin: 1rem auto;  
+    max-width: 90%; /* Увеличение ширины для мобильных */  
+    padding: 1rem; /* Используем rem для адаптивности */  
+    background: white;  
+    border-radius: 0.5rem; /* Используем rem для адаптивности */  
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Уменьшение тени */  
+}  
+
+#reservation-details {  
+    display: block;  
+    margin: 0.5rem 0 0.3125rem; /* Используем rem для адаптивности */  
+    color: #333; /* Последовательный цвет текста */  
+}  
+
+.form-group {  
+    margin-bottom: 0.75rem; /* Используем rem для адаптивности */  
+}  
+
+label {  
+    display: block;  
+    margin-bottom: 0.25rem; /* Используем rem для адаптивности */  
+    color: #333; /* Последовательный цвет текста */  
+}  
+
+input[type="date"],  
+input[type="time"],  
+input[type="number"] {  
+    width: calc(100% - 1rem); /* Уменьшение ширины с учетом полей */ 
+    padding: 0.5rem; /* Используем rem для адаптивности */  
+    border: 1px solid #ccc;  
+    border-radius: 0.25rem; /* Используем rem для адаптивности */  
+    box-sizing: border-box;  
+
+    &:focus {  
+        border-color: #621007; /* Цвет рамки при фокусе */  
+        outline: none; /* Убираем обводку при фокусе */  
+    }  
+}  
+
+.form-section {  
+    background-color: #fdf5e6; /* Светлый бежевый фон */  
+    border: 1px solid #d3cfc9;  
+    margin: auto;  
+    height: auto; /* Автоматическая высота для адаптивности */  
+    width: 90%; /* Увеличение ширины для адаптивности */   
+}  
+
+/* Input Styles */  
+input[type="text"],  
+input[type="tel"] {  
+    width: calc(100% - 1rem); /* Уменьшение ширины с учетом полей */  
+    padding: 0.5rem; /* Используем rem для адаптивности */  
+    margin-bottom: 0.75rem; /* Используем rem для адаптивности */  
+    border: 1px solid #ccc;  
+    border-radius: 0.25rem; /* Используем rem для адаптивности */  
+    font-size: 1rem; /* Используем rem для адаптивности */  
+    color: #333; /* Цвет текста */  
+}  
+
+
+/* Меню */  
+.menu-section {  
+    background-color: #fdf5e6; /* Светлый бежевый фон */  
+    display: flex;  
+    flex-direction: column; /* Вертикальное выравнивание */  
+    align-items: center; /* Центрирование содержимого */   
+}  
+
+.menu-block {  
+    display: flex; /* Устанавливаем flexbox для контейнера меню */  
+    flex-wrap: wrap; /* Позволяем элементам переходить на новую строку */  
+    justify-content: center; /* Центрируем элементы по горизонтали */  
+}  
+
+.menu-item {  
+    margin: 2%; /* Уменьшение отступов между элементами */  
+    flex: 0 1 calc(25% - 20px); /* Три колонки с учетом отступов */  
+    display: flex;  
+    flex-direction: column; /* Чтобы содержимое в меню располагалось вертикально */  
+    background-color: #444B3D; /* Темный фон для каждого блюда */  
+    overflow: hidden; /* Прячем лишнюю часть */  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень */  
+    color: white; /* Цвет текста */  
+
+    img {  
+        width: 100%;  
+        height: auto; /* Адаптивная высота */  
+    }  
+
+    .product-title {  
+        font-family: CormorantSC-Bold;  
+        font-size: 1.3vw; /* Уменьшение размера шрифта */  
+        color: #FFEBA9;  
+        margin: 0;  
+        padding: 5%; /* Уменьшение полей */  
+        height: auto; /* Автоматическая высота */  
+    }  
+
+    .pp {  
+        padding: 5%; /* Уменьшение полей */  
+        display: flex;  
+        justify-content: space-between; /* Размещаем элементы по краям */ 
+
+        .product-weight {  
+            font-family: Roboto-Light;  
+            font-size: 1vw; /* Уменьшение размера шрифта */  
+            color: rgba(255, 235, 169, 0.5);  
+            display: flex;  
+            margin: 0;  
+        }  
+
+        .product-price {  
+            font-family: CormorantSC-Bold;  
+            font-size: 1.3vw; /* Уменьшение размера шрифта */  
+            color: #FFEBA9;  
+            margin: 0;  
+        }  
+    }  
+}  
+
+.back {   
+    padding: 1rem; /* Уменьшение отступов */  
+    background-color: #fdf5e6; /* Светлый бежевый фон */  
+    border: 1px solid #d3cfc9;  
+    margin: 0 2.5%; /* Уменьшение отступа */  
+    box-sizing: border-box; /* Включает padding и border в ширину */  
+    height: 100%; /* Адаптация высоты под содержимое */   
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Уменьшение тени */  
+}  
+
+.categories-section {  
+    background-color: #fdf5e6;  
+    text-align: center; /* Центрирование всего меню */  
+    justify-content: center;  
+    border-bottom: 1px solid #c19893;  
+
+    .categories-menu {  
+        list-style-type: none; /* Убираем маркеры списка */  
+        padding: 0; /* Убираем отступы */  
+        display: flex; /* Используем flexbox для горизонтального расположения */  
+        justify-content: center; /* Центрируем элементы по горизонтали */  
+        white-space: nowrap; 
+        li {  
+            a {  
+                text-decoration: none; /* Убираем подчеркивание */  
+                color: #621007; /* Цвет текста */  
+                font-size: 1.3vw; /* Размер шрифта по умолчанию */ 
+                font-weight: bold; /* Жирный шрифт */  
+                padding: 0.625rem; /* Уменьшение отступов */  
+                transition: background-color 0.3s, transform 0.3s; /* Плавный переход */  
+
+                &:hover {  
+                    background-color: #621007;  
+                    color: #e0d8c7; /* Изменение цвета при наведении на ссылку */  
+                    transform: scale(1.05); /* Увеличение размера кнопки при наведении */  
+                }  
+            }  
+        }  
+    }  
+}  
+
+.btn-back-top {  
+    position: fixed;  
+    bottom: 5rem; /* Уменьшение отступа от нижней части экрана */  
+    right: 4rem; /* Уменьшение отступа справа */  
+    display: none; /* Изначально скрыта */  
+    background-color: #444B3D; /* Цвет кнопки */  
+    color: #fdf5e6; /* Цвет текста */  
+    border: none; /* Убираем обводку */  
+    border-radius: 50%; /* Сделаем кнопку круглой */  
+    overflow: hidden;   
+    width: 4rem; /* Уменьшение ширины кнопки */  
+    height: 4rem; /* Уменьшение высоты кнопки для правильной круглой формы */  
+    font-size: 2.25rem; /* Уменьшение размера текста */  
+    text-align: center; /* Выравнивание текста по центру */  
+    cursor: pointer; /* Курсор при наведении */  
+    outline: none; /* Убираем обводку при фокусе */  
+    line-height: 4rem; /* Центрируем текст вертикально в круге */  
+    transition: background-color 0.3s, transform 0.3s; /* Плавный переход */  
+
+    &:hover {  
+        transform: scale(1.1); /* Увеличение размера кнопки при наведении */  
+    }  
+    
+    &:focus {  
+        outline: none; /* Убираем стандартное выделение при фокусе */  
+    }  
+}
+
+
+/* Карта */  
+.table-container {  
+    position: relative;  
+    width: 90%; /* Ширина контейнера */  
+    height: 25rem; /* Высота карты по умолчанию */  
+    background-color: #eaeaea;  
+    margin: 1.5rem auto; /* Отступы сверху и снизу */  
+    font-size: 1.5vw;
+
+    .tables {  
+        position: absolute;  
+        padding: 1vw; /* Отступы */  
+        background-color: #844038;  
+        color: #fdf5e6;  
+        border-radius: 0.3125rem; /* Угол закругления */  
+        cursor: pointer;  
+        transition: background-color 0.3s;  
+        text-align: center;  
+
+        &:hover {  
+            background-color: #ddd;  
+            color: #621007;  
+        }  
+
+        &.selected {  
+            background-color: #ddd;  
+            color: #621007;  
+        }  
+    }  
+
+    /* Стили для входа, окон и бара */  
+    .entrance {  
+        position: absolute;  
+        padding: 0.5rem; /* Угол закругления */  
+        background-color: #FFD700;  
+        border-radius: 0.3125rem; /* Угол закругления */  
+        text-align: center;  
+        font-weight: bold;  
+    }  
+
+    .window1, .window2 {  
+        position: absolute;  
+        padding: 0.5vw; /* Угол закругления */  
+        background-color: #ADD8E6;  
+        border-radius: 0.3125rem; /* Угол закругления */  
+        text-align: center;  
+    }  
+
+    .window1 {  
+        padding: 2.5vw 0.0625vw; /* Отступы */  
+    }  
+
+    .window2 {  
+        padding: 0.0625vw 6.25vw; /* Отступы */  
+    }  
+
+    .bar {  
+        position: absolute;  
+        padding: 7.5vw 0.5vw; /* Угол закругления */  
+        background-color: #DDA0DD;  
+        border-radius: 0.3125rem; /* Угол закругления */  
+        text-align: center;  
+    }  
+}  
+
+/* О нас */  
+.intro2 {  
+    font-family: Roboto-Light;  
+    font-size: 1.125rem; /* Размер шрифта */  
+    color: #621007;  
+    padding: 0 2.5rem; /* Отступы */  
+    background-color: #fdf5e6;  
+    border: 1px solid #d3cfc9;  
+    margin: 0 3.125rem; /* Отступы */  
+    height: 100%; /* Автоматическая высота */  
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1); /* Тень */  
+}  
+
+#logo2_1 {  
+    width: 20%; /* Ширина логотипа */  
+    max-width: 200px; /* Максимальная ширина */  
+    margin: 0 auto;  
+    height: auto;  
+}  
+
+h1 {  
+    font-family: CormorantSC-Bold;  
+    font-size: 1.75rem; /* Размер шрифта */  
+}  
+
+/* Медиа-запросы для адаптации к меньшим экранам */  
+@media (max-width: 768px) {  
+    .table-container {  
+        height: 20rem; /* Уменьшение высоты карты на мобильных */  
+    }  
+    #confirm-reservation{
+        font-size: 3vw;
+    }
+    .tables, .entrance, .window1, .window2, .bar {  
+        padding: 2vw; /* Уменьшение отступов */  
+    }  
+
+    .intro2 {  
+        padding: 0 1.5rem; /* Уменьшение отступов */  
+        margin: 0 1.5rem; /* Уменьшение отступов */  
+    }  
+
+    #logo2_1 {  
+        width: 40%; /* Увеличение ширины логотипа на мобильных */  
+    }  
+
+    h2 {  
+        font-size: 4vw; /* Уменьшение размера заголовка */  
+    }  
+    
+}  
