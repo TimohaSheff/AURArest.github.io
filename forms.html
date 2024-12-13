@@ -22,39 +22,39 @@
         </div>
     </header>
 
-    <main>
-        <section class="form-section">
-            <h2>Заполните форму</h2>
-            <form id="reservation-form">
-                <div class="form-group">
-                    <label for="name">Введите ваше имя:</label>
-                    <input type="text" id="name" class="form-control" required>
+    <main>  
+        <section class="form-section">  
+            <h2>Заполните форму</h2>  
+            <form id="reservation-form">  
+                <div class="form-group">  
+                    <label for="name">Введите ваше имя:</label>  
+                    <input type="text" id="name" class="form-control" required>  
+                </div>  
+    
+                <div class="form-group">  
+                    <label for="phone">Введите ваш номер телефона:</label>  
+                    <input type="tel" id="phone" class="form-control" pattern="[\+()\d\s-]+" required>   
                 </div>
-
-                <div class="form-group">
-                    <label for="phone">Введите ваш номер телефона:</label>
-                    <input type="tel" id="phone" class="form-control" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="date">Выберите дату:</label>
-                    <input type="date" id="date" class="form-control" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="time">Выберите время:</label>
-                    <input type="time" id="time" class="form-control" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="guests">Количество гостей:</label>
-                    <input type="number" id="guests" class="form-control" min="1" max="20" required>
-                </div>
-
-                <div id="reservation-details"></div>
-                <button type="submit" id="confirm-reservation">Отправить заявку</button>
-            </form>
-        </section>
+    
+                <div class="form-group">  
+                    <label for="date">Выберите дату:</label>  
+                    <input type="date" id="date" class="form-control" required>  
+                </div>  
+    
+                <div class="form-group">  
+                    <label for="time">Выберите время:</label>  
+                    <input type="time" id="time" class="form-control" required>  
+                </div>  
+    
+                <div class="form-group">  
+                    <label for="guests">Количество гостей:</label>  
+                    <input type="number" id="guests" class="form-control" min="1" max="20" required>  
+                </div>  
+    
+                <div id="reservation-details"></div>  
+                <button type="submit" id="confirm-reservation">Отправить заявку</button>  
+            </form>  
+        </section>  
     </main>
 
     <script src="script.js"></script>
