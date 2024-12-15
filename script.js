@@ -33,7 +33,7 @@ function setupReservationButton() {
 // Функция для получения параметров из URL  
 function getParameterByName(name) {  
     const url = window.location.href;  
-    name = name.replace(/[\[\]]/g, '\\$&');  
+    name = name.replace(/[  $$  $$  ]/g, '\\$&');  
     const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),  
         results = regex.exec(url);  
     if (!results) return null;  
@@ -50,6 +50,7 @@ function displayReservationDetails() {
     if (reservationDetails) {  
         if (tableNumber !== null) {  
             reservationDetails.textContent = 'Выбранный стол: ' + tableNumber;  
+            document.getElementById('reservation-form').style.display = 'block'; // Показываем форму  
         } else {  
             reservationDetails.textContent = 'Стол не выбран.';  
         }  
@@ -80,16 +81,43 @@ function validateAndSubmitForm(event) {
         return;  
     }  
 
-    // Получаем номер выбранного стола  
+    // Сохраняем данные в localStorage  
     const tableNumber = getParameterByName('table');  
+    const reservationData = { name, phone, date, time, guests, table: tableNumber || 'не выбран' };  
+    localStorage.setItem('reservationData', JSON.stringify(reservationData));  
 
     // Если все поля валидны, показываем уведомление  
-    alert('Бронь подтверждена!\nИмя: ' + name +   
-          '\nТелефон: ' + phone +   
-          '\nДата: ' + date +   
-          '\nВремя: ' + time +   
-          '\nКоличество гостей: ' + guests +   
-          '\nВыбранный стол: ' + (tableNumber ? tableNumber : 'не выбран.'));  
+    alert('Бронь подтверждена!\nИмя: ' + name +  
+        '\nТелефон: ' + phone +  
+        '\nДата: ' + date +  
+        '\nВремя: ' + time +  
+        '\nКоличество гостей: ' + guests +  
+        '\nВыбранный стол: ' + (tableNumber ? tableNumber : 'не выбран.'));  
+
+    // Отображаем кнопку для скачивания данных только после успешного подтверждения  
+    const downloadButton = document.getElementById('download-data');  
+    if (downloadButton) {  
+        downloadButton.style.display = 'block';  
+        downloadButton.onclick = function () {  
+            downloadData(reservationData);  
+        };  
+    }  
+}  
+
+// Функция для скачивания данных  
+function downloadData(reservationData) {  
+    const data = `Имя: ${reservationData.name}\nТелефон: ${reservationData.phone}\nДата: ${reservationData.date}\nВремя: ${reservationData.time}\nКоличество гостей: ${reservationData.guests}\nВыбранный стол: ${reservationData.table}`;  
+
+    const blob = new Blob([data], { type: 'text/plain' });  
+    const url = URL.createObjectURL(blob);  
+
+    const a = document.createElement('a');  
+    a.href = url;  
+    a.download = 'reservation_details.txt';  
+    document.body.appendChild(a);  
+    a.click();  
+    document.body.removeChild(a);  
+    URL.revokeObjectURL(url);  
 }  
 
 // Функция для управления кнопкой "Вернуться наверх"  
@@ -112,8 +140,7 @@ function setupBackToTopButton() {
         };  
     }  
 }  
-
-// Ждем загрузки DOM и выполняем нужные функции в зависимости от страницы  
+ 
 document.addEventListener('DOMContentLoaded', function () {  
     if (document.getElementById('confirm-reservation')) {  
         setupReservationButton();  
@@ -126,4 +153,10 @@ document.addEventListener('DOMContentLoaded', function () {
         form.addEventListener('submit', validateAndSubmitForm);  
     }  
     setupBackToTopButton();  
+
+    // Изначально скрываем кнопку "Скачать данные"  
+    const downloadButton = document.getElementById('download-data');  
+    if (downloadButton) {  
+        downloadButton.style.display = 'none';  
+    }  
 });
